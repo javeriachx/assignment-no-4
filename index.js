@@ -1,27 +1,23 @@
+document.getElementById("checkStatusBtn").addEventListener("click", () => {
+    savePromises();
+  });
+async function savePromises(){
+    try{
+        const res = await new Promise((resolve,reject)=>
+        {
+            setTimeout(()=>{
+                resolve("Success");
+            },3000);
+        });
+        alert(res);
+    } catch(err) {
+        console.log(err);
+        alert("Error while generating response");
+      }finally {
+        alert("Operation completed");
+      }
+}
+        
+    
 
 
- const task1 = document.getElementById("task1");
- const task2 = document.getElementById("task2");
- const task3 = document.getElementById("task3");
-
- function highlightTask(task) {
-  
-    task1.style.backgroundColor = "white";
-    task2.style.backgroundColor = "white"; 
-    task3.style.backgroundColor = "white"; 
-   
-
-    task.style.backgroundColor="red";
- }
- task1.onclick = function() {
-    highlightTask(task1);
-  };
-  
-  task2.onclick = function() {
-    highlightTask(task2);
-  };
-  
-  task3.onclick = function() {
-    highlightTask(task3);
-  };
-  
